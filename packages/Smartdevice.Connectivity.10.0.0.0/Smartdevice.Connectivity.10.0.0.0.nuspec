@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Smartdevice.Connectivity</id>
+    <version>10.0.0.0</version>
+    <title>Smartdevice.Connectivity</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>https://dev.windowsphone.com/en-us</licenseUrl>
+    <projectUrl>http://msdn.microsoft.com/en-us/library/bb545992(v=vs.90).aspx</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Smart Device Connectivity APIs enable developers to take advantage of some core connectivity features in their applications.</description>
+    <releaseNotes>Provides the Microsoft.Smartdevice.Connectivity assembly as a NuGet package. For details see http://msdn.microsoft.com/en-us/library/bb545992(v=vs.90).aspx</releaseNotes>
+    <copyright>Copyright 2008</copyright>
+    <language />
+    <tags>Smartdevice Connectivity</tags>
+  </metadata>
+</package>
