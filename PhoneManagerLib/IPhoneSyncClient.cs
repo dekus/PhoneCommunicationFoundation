@@ -8,9 +8,7 @@ namespace PhoneManagerLib
 {
     interface IPhoneSyncClient 
     {
-        void RegisterAction(string actionName, PhoneSyncActionBase action);
-        ActionResult ExecuteAction(string actionName, object actionParam);
         bool SendCommand(IPhoneSyncCommand command);
-
+        event EventHandler OnCommandExecutionComplete;
     }
 }

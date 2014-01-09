@@ -8,7 +8,8 @@ namespace PhoneManagerLib
 {
     interface IPhoneSyncServer
     {
-        void GetCommand();
+        IPhoneSyncCommand GetCommand();
+        void RegisterAction(string actionName, PhoneSyncActionBase action);
         ActionResult ExecuteAction(IPhoneSyncCommand command);
     }
 }

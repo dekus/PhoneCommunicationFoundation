@@ -13,8 +13,10 @@ namespace PhoneManagerLib
         void DeleteDirectory(string targetDeviceDirPath);
         bool DirectoryExists(string targetDeviceDirPath);
         bool FileExists(string targetDeviceFilePath);
-        List<IPhoneSyncStorageFileInfo> GetDirectoryListing(string searchPattern);
-        List<IPhoneSyncStorageFileInfo> GetDirectoryListing();
+        List<Microsoft.SmartDevice.Connectivity.Interface.IRemoteFileInfo> GetRemoteDirectoryListing(string searchPattern);
+        List<Microsoft.SmartDevice.Connectivity.Interface.IRemoteFileInfo> GetRemoteDirectoryListing();
+        List<string> GetDirectoryListing(string searchPattern);
+        List<string> GetFilesListing(string searchPattern);
         void ReceiveFile(string sourceDeviceFilePath, string targetDesktopFilePath, bool createNew);
         void SendFile(string sourceDesktopFilePath, string targetDeviceFilePath, bool createNew);
         void CreateFile(string file, string data);
