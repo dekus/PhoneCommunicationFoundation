@@ -15,6 +15,13 @@ namespace PhoneManagerLib
             this._storage = storage;
         }
 
+        public async void WaitCommand()
+        {
+            while(true)
+            {
+                
+            }
+        }
         public IPhoneSyncCommand GetCommand(StorageChangeEventArgs e)
         {
             return new PhoneSyncCommand().XmlDeserialize<IPhoneSyncCommand>(this._storage.ReadFile(e.NewFiles[0]));

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.SmartDevice.Connectivity;
+using Microsoft.SmartDevice.Connectivity.Wrapper;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,7 +94,14 @@ namespace PhoneManagerLib
 
             if (remoteFileObject != null)
             {
-                remoteFileObject.GetRemoteIsolatedStorageFile().DeleteFile(filename);
+                BindingFlags eFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+                var fieldInfo = (typeof(RemoteIsolatedStorageFileObject)).GetField("mRemoteIsolatedStorageFile", eFlags);
+                RemoteIsolatedStorageFile RIStorageFile;
+                if (fieldInfo != null)
+                {
+                    RIStorageFile = fieldInfo.GetValue(remoteFileObject) as RemoteIsolatedStorageFile;
+                    RIStorageFile.DeleteFile(filename);
+                }
             }
         }
 
