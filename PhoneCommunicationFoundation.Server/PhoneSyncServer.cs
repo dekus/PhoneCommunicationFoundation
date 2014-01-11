@@ -13,17 +13,11 @@ namespace PhoneManagerLib
         public PhoneSyncServer(IPhoneSyncStorage storage)
         {
             this._storage = storage;
-            this._storage.OnChangeNotify += storage_OnChangeNotify;
         }
 
-        void storage_OnChangeNotify(object sender, EventArgs e)
+        public IPhoneSyncCommand GetCommand(StorageChangeEventArgs e)
         {
-            this.ExecuteAction(this.GetCommand(e));
-        }
-
-        private IPhoneSyncCommand GetCommand(EventArgs e)
-        {
-            throw new NotImplementedException();
+            return new PhoneSyncCommand().XmlDeserialize<IPhoneSyncCommand>(this._storage.ReadFile(e.NewFiles[0]));
         }
         public ActionResult ExecuteAction(IPhoneSyncCommand command)
         {

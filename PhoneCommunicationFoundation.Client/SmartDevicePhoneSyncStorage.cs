@@ -1,19 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PhoneManagerLib
 {
-    class SmartDevicePhoneSyncStorage : IPhoneSyncStorage
+    public class SmartDevicePhoneSyncStorage : IPhoneSyncStorage
     {
+
+        public delegate void StorageChangeEventHandler(object sender, StorageChangeEventArgs a);
+
+        public event EventHandler<StorageChangeEventArgs> OnChangeNotify;
+
+        protected virtual void OnRaiseStorageChangeEvent(StorageChangeEventArgs e)
+        {
+            EventHandler<StorageChangeEventArgs> handler = OnChangeNotify;
+            if (handler != null) handler(this, e);
+        }
+
         private readonly Microsoft.SmartDevice.Connectivity.Interface.IRemoteIsolatedStorageFile _storage;
+        private List<Microsoft.SmartDevice.Connectivity.Interface.IRemoteFileInfo> _baseFileList;
+       
 
         public SmartDevicePhoneSyncStorage(Microsoft.SmartDevice.Connectivity.Interface.IRemoteIsolatedStorageFile storage)
         {
             this._storage = storage;
+            this._baseFileList = this.GetRemoteDirectoryListing("outbox");
+            
+
         }
+        
         public void CreateDirectory(string targetDeviceDirPath)
         {
             this._storage.CreateDirectory(targetDeviceDirPath);
@@ -61,13 +80,25 @@ namespace PhoneManagerLib
         }
         public void CreateFile(string file, string data)
         {
-            throw new NotImplementedException();
+            using (StreamWriter outfile = new StreamWriter(file))
+            {
+                outfile.Write(data);
+            }
         }
-        public void DeleteFile(string file)
+        public void DeleteFile(string filename)
+        {
+            var remoteFileObject = this._storage as RemoteIsolatedStorageFileObject;
+
+            if (remoteFileObject != null)
+            {
+                remoteFileObject.GetRemoteIsolatedStorageFile().DeleteFile(filename);
+            }
+        }
+
+        public string ReadFile(string filename)
         {
             throw new NotImplementedException();
         }
 
-        public event EventHandler OnChangeNotify;   
     }
 }

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{210C075A-6F05-46FA-8BBE-D368080E9D30}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>PhoneCommunicationFoundation.Client</RootNamespace>
+    <AssemblyName>PhoneCommunicationFoundation.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,37 +30,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CashDepartment.MobileCollector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Smartdevice.Connectivity, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\DKProjects\Main\Sources\CashDepartment.MobileCollector\CashDepartment.MobileCollector\bin\Debug\CashDepartment.MobileCollector.dll</HintPath>
+      <HintPath>..\..\..\..\..\Dropbox\com\Microsoft.Smartdevice.Connectivity.dll</HintPath>
     </Reference>
-    <Reference Include="CashDepartment.Shared.Portable, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Smartdevice.Connectivity.Interface, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\DKProjects\Main\Sources\CashDepartment.MobileCollector\CashDepartment.MobileCollector\bin\Debug\CashDepartment.Shared.Portable.dll</HintPath>
+      <HintPath>..\..\..\..\..\Dropbox\com\Microsoft.Smartdevice.Connectivity.Interface.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SmartDevice.Connectivity.Interface, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SmartDevice.MultiTargeting.Connectivity, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Smartdevice.MultiTargeting.Connectivity, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Dropbox\com\Microsoft.Smartdevice.MultiTargeting.Connectivity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.Composition.Registration" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Windows" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PhoneSyncClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartDevicePhoneSyncStorage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PhoneManagerLib\PhoneManagerLib.csproj">
+    <ProjectReference Include="..\PhoneManagerLib\PhoneCommunicationFoundation.Core.csproj">
       <Project>{9069010b-58d3-4433-b2ff-6f26de24c338}</Project>
-      <Name>PhoneManagerLib</Name>
+      <Name>PhoneCommunicationFoundation.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

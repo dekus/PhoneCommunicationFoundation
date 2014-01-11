@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneCommunicationFoundation", "PhoneCommunicationFoundation\PhoneCommunicationFoundation.csproj", "{210C075A-6F05-46FA-8BBE-D368080E9D30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTestApp", "PhoneCommunicationFoundation\ClientTestApp.csproj", "{210C075A-6F05-46FA-8BBE-D368080E9D30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneManagerLib", "PhoneManagerLib\PhoneManagerLib.csproj", "{9069010B-58D3-4433-B2FF-6F26DE24C338}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneCommunicationFoundation.Core", "PhoneManagerLib\PhoneCommunicationFoundation.Core.csproj", "{9069010B-58D3-4433-B2FF-6F26DE24C338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneCommunicationFoundation.Client", "PhoneCommunicationFoundation.Client\PhoneCommunicationFoundation.Client.csproj", "{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneCommunicationFoundation.Server", "PhoneCommunicationFoundation.Server\PhoneCommunicationFoundation.Server.csproj", "{BE5004A6-0F1B-4059-88E1-B29E46E0A2AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9069010B-58D3-4433-B2FF-6F26DE24C338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9069010B-58D3-4433-B2FF-6F26DE24C338}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9069010B-58D3-4433-B2FF-6F26DE24C338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD17CA21-1684-47B1-BE95-EC48F7FC07A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5004A6-0F1B-4059-88E1-B29E46E0A2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5004A6-0F1B-4059-88E1-B29E46E0A2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5004A6-0F1B-4059-88E1-B29E46E0A2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5004A6-0F1B-4059-88E1-B29E46E0A2AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

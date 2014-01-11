@@ -19,9 +19,10 @@ namespace PhoneManagerLib
         List<string> GetFilesListing(string searchPattern);
         void ReceiveFile(string sourceDeviceFilePath, string targetDesktopFilePath, bool createNew);
         void SendFile(string sourceDesktopFilePath, string targetDeviceFilePath, bool createNew);
-        void CreateFile(string file, string data);
-        void DeleteFile(string file);
+        void CreateFile(string filename, string data);
+        void DeleteFile(string filename);
+        string ReadFile(string filename);
 
-        event EventHandler OnChangeNotify;
+        event EventHandler<StorageChangeEventArgs> OnChangeNotify;
     }
 }

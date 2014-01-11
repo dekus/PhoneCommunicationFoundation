@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace PhoneManagerLib
 {
-    interface IPhoneSyncCommand
+    public class StorageChangeEventArgs : EventArgs
     {
-        Guid Id { get; set; }
-        string ActionName { get; set; }
-        object Param { get; set; }
+        public List<string> NewFiles { get; set; }
     }
 }

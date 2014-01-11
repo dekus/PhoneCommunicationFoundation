@@ -3,36 +3,36 @@
   <Interface Name="PhoneManagerLib.IPhoneSyncStorage">
     <Position X="0.5" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ACQgAAAAAAAAYAAABAQAAAAAAAQAAAAAAAEAAAAAAQA=</HashCode>
-      <FileName>IPhoneSyncStorage.cs</FileName>
+      <HashCode>ACQgAAAAAAAAYAAABAQAAAAAAAwAAAAAAAEAEAAAAQA=</HashCode>
+      <FileName>Interface\IPhoneSyncStorage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PhoneManagerLib.IPhoneSyncStorageFileInfo">
     <Position X="0.5" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgRAAIAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IPhoneSyncStorageFileInfo.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="PhoneManagerLib.IPhoneSyncManager">
-    <Position X="6" Y="0.75" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>IPhoneSyncManagerBase.cs</FileName>
+      <FileName>Interface\IPhoneSyncStorageFileInfo.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PhoneManagerLib.IPhoneSyncCommand">
     <Position X="3" Y="0.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AQACAAIAAAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>IPhoneSyncCommand.cs</FileName>
+      <HashCode>AAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Interface\IPhoneSyncCommand.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PhoneManagerLib.IPhoneSyncClient">
     <Position X="6.25" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>IPhoneSyncClient.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IPhoneSyncClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PhoneManagerLib.IPhoneSyncServer">
+    <Position X="9" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAAAA=</HashCode>
+      <FileName>Interface\IPhoneSyncServer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

@@ -21,7 +21,7 @@ namespace ConsoleApplication1
             CDevice = null;
         }
 
-        static void newWatcher_RaiseDeviceConnectedEvent(object sender, PhoneManager.DeviceEventArgs e)
+        static async void newWatcher_RaiseDeviceConnectedEvent(object sender, PhoneManager.DeviceEventArgs e)
         {
             Console.WriteLine(e.ConnectedDevice.Id);
             Console.WriteLine(e.ConnectedDevice.Name);
@@ -30,6 +30,8 @@ namespace ConsoleApplication1
             foreach (var remoteApplication in applications)
             {
                 var store = remoteApplication.GetIsolatedStore();
+                var client = new PhoneSyncClient(new SmartDevicePhoneSyncStorage(store));
+                var result = await client.SendCommand(new PhoneSyncCommand { ActionName = "getContainers" });
             }
         }
     }

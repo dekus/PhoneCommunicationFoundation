@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace PhoneManagerLib
 {
-    interface IPhoneSyncClient 
+    public interface IPhoneSyncCommand
     {
-        bool SendCommand(IPhoneSyncCommand command);
-        event EventHandler OnCommandExecutionComplete;
+        Guid Id { get; set; }
+        string ActionName { get; set; }
+        object Param { get; set; }
     }
 }
